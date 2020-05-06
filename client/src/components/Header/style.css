@@ -1,0 +1,10 @@
+.jumbotron {
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+ h1 {
+   font-family: 'Homemade Apple', cursive;
+ }
