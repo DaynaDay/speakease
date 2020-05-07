@@ -15,7 +15,7 @@ db.on("error", error => {
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname + "./public/index.html"));
 });
-// need to post poems//
+// need to post poems, use submit for now until button is made//
 app.post("/submit", (req, res) => {
   console.log(req.body);
 
@@ -23,12 +23,32 @@ app.post("/submit", (req, res) => {
     if (error) {
       res.send(error);
     } else {
-      res.send(data);
+      res.send(poemdata);
     }
   });
 
 })
-// need to delete poem//
+// need to delete single poem//
+app.delete("/clear", (req, res) => {
+  db.poems.remove({}, (error, response) => {
+    if (error) {
+      res.send(error);
+    } else {
+      res.send(response);
+    }
+  });
+});
+// to delete book/category//
+app.delete("/clear", (req, res) => {
+  db.poems.remove({}, (error, response) => {
+    if (error) {
+      res.send(error);
+    } else {
+      res.send(response);
+    }
+  });
+});
+
 
 // need to update/add to exsisting poem//
 
