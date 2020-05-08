@@ -1,5 +1,6 @@
 const express = require("express");
 const mongojs = require("mongojs");
+const router = require("express").Router();
 
 const app = express();
 
@@ -54,3 +55,4 @@ app.delete("/clear", (req, res) => {
 
 
 
+module.exports = router;
