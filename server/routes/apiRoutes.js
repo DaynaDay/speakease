@@ -13,7 +13,7 @@ db.on("error", error => {
   console.log("Database Error:", error);
 });
 
-app.get("/", (req, res) => {
+app.get("/api/PoemModel", (req, res) => {
   res.sendFile(path.join(__dirname + "./public/index.html"));
 });
 // need to post poems, use submit for now until button is made//
