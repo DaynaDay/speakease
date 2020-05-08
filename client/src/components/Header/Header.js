@@ -1,5 +1,6 @@
 import React from "react";
-import Jumbotron from 'react-bootstrap/Jumbotron';
+import {Jumbotron, Container, Modal} from 'react-bootstrap/Jumbotron';
+
 
 
 function Jumbotron() {
