@@ -1,9 +1,6 @@
 import React from "react";
-import {Jumbotron, Container, Modal} from 'react-bootstrap/Jumbotron';
 
-
-
-function Jumbotron() {
+function Header() {
 
   // set modal display state
   const [showModal, setShowModal] = useState(false);
@@ -55,4 +52,4 @@ function Jumbotron() {
   
 
 
-export default Jumbotron;
+export default Header;

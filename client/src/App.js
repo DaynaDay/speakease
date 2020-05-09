@@ -1,10 +1,10 @@
-import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import * as API from './utils/API';
 import AuthService from './utils/auth';
-
+import Header from './components/Header/Header';
+import Navbar from './components/Navbar'; 
 
 function App() {
   // set data to be used for UserInfoContext and make it available to all other components
@@ -32,23 +32,12 @@ function App() {
     userInfo.getUserData();
   });
   return (
+    <>
+   <Header />
+   <Navbar />
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-      </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-      </a>
-      </header>
     </div>
-  
+  </>
   );
 }
 

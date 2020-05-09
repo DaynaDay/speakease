@@ -2,7 +2,7 @@
 import CardDeck from 'react-bootstrap/CardDeck'
 
 
-function CardDeck () {
+function CardDeck (props) {
   return (
 <CardDeck>
   <Card>
