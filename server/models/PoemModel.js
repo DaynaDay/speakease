@@ -9,7 +9,7 @@ title: {
     trim: true,
     required: "Theme of"
   },
-  category: {
+  theme: {
     type: String
     
   },

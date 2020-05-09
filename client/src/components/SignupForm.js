@@ -5,7 +5,7 @@ import UserInfoContext from '../utils/UserInfoContext';
 import { createUser } from '../utils/API';
 import AuthService from '../utils/auth';
 
-function Signup({ handleModalClose }) {
+function SignupForm({ handleModalClose }) {
   // set initial form state
   const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
   // set state for form validation
@@ -107,4 +107,4 @@ function Signup({ handleModalClose }) {
   );
 }
 
-export default Signup;
+export default SignupForm;

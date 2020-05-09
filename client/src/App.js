@@ -1,6 +1,7 @@
 
 import './App.css';
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import * as API from './utils/API';
 import AuthService from './utils/auth';
 import Header from './components/Header/Header';
@@ -32,12 +33,22 @@ function App() {
     userInfo.getUserData();
   });
   return (
-    <>
+    <Router>
+      <>
+
    <Header />
-   <Navbar />
-    <div className="App">
-    </div>
+     {/* wrap our entire app in context provider and provide userInfo state as value */}
+     <UserInfoContext.Provider value={userInfo}>
+          <Navbar />
+          <Switch>
+            <Route exact path='/' component={Welcome} />
+            <Route exact path='/collection' component={Collection} />
+            <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
+          </Switch>
+        </UserInfoContext.Provider>
   </>
+    </Router>
+    
   );
 }
 

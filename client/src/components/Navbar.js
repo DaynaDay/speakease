@@ -1,8 +1,9 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
-import SignUp from './Signup';
+
 import LoginForm from './LoginForm';
+import SignupForm from './SignupForm'; 
 
 import UserInfoContext from '../utils/UserInfoContext';
 import AuthService from '../utils/auth';
@@ -24,13 +25,13 @@ function AppNavbar() {
           <Navbar.Collapse id='navbar'>
             <Nav className='ml-auto'>
               <Nav.Link as={Link} to='/'>
-                Search For Books
+                Search For Collection
               </Nav.Link>
               {/* if user is logged in show saved books and logout */}
               {username ? (
                 <>
-                  <Nav.Link as={Link} to='/saved'>
-                    See {username}'s Books
+                  <Nav.Link as={Link} to='/collection'>
+                    See {username}'s Collection
                   </Nav.Link>
                   <Nav.Link onClick={AuthService.logout}>Logout</Nav.Link>
                 </>
