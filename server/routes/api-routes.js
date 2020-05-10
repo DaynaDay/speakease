@@ -1,6 +1,6 @@
 const express = require("express");
 const mongojs = require("mongojs");
-const router = require("express").Router();
+// const router = require("express").Router();
 
 const app = express();
 
@@ -51,8 +51,7 @@ app.delete("/clear", (req, res) => {
 });
 
 
-// need to update/add to exsisting poem//
-
-
-
 module.exports = router;
+
+// NOTES//
+// Try using app.get first. If that doesn't work try router.get. Might also need to change the database set up to the one like in google books.
