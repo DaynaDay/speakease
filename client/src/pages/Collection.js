@@ -1,13 +1,17 @@
 import React from "react";
-import { Container, Card } from 'react-bootstrap/Form'
+import React from "react";
+import Header from "../components/Header";
+import Navbar from '../components/Navbar';
 import CardDeck from "../components/Card";
 
 function Collection () {
   return (
-    <>
-    
+  <>
+    <Header/>
+    <Navbar/>
     <CardDeck />
     </>
+  
   )
 }
 
