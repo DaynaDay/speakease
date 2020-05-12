@@ -5,16 +5,19 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import * as API from './utils/API';
 import AuthService from './utils/auth';
 import Header from './components/Header/Header';
-import Navbar from './components/Navbar';
 import Welcome from './pages/Welcome';
 import Collection from './pages/Collection';
-import UserInfoContext from '../utils/UserInfoContext';
+import UserInfoContext from './utils/UserInfoContext';
 
 function App() {
   // set data to be used for UserInfoContext and make it available to all other components
   const [userInfo, setUserInfo] = useState({
     username: '',
-    email: '',
+    poems: [],
+    collections: [],
+    poemCount: 0,
+    collectionCount: 0,
+
     // method to get user data after logging in
     getUserData: () => {
       // if user's logged in get the token or return null
@@ -24,8 +27,8 @@ function App() {
         return false;
       }
       API.getMe(token)
-        .then(({ data: { username, email } }) =>
-          setUserInfo({ ...userInfo, username, email })
+        .then(({ data: { username, poems, collections, poemCount, collectionCount} }) =>
+          setUserInfo({ ...userInfo, username, poems, collections, poemCount, collectionCount })
         )
         .catch((err) => console.log(err));
     },
@@ -34,19 +37,19 @@ function App() {
   // on load, get user data if a token exists
   useEffect(() => {
     userInfo.getUserData();
-  });
+  },[])
   return (
     <Router>
       <>
 
-        <Header />
+        
         {/* wrap our entire app in context provider and provide userInfo state as value */}
         <UserInfoContext.Provider value={userInfo}>
-          <Navbar />
+          <Header />
           <Switch>
             <Route exact path='/' component={Welcome} />
             <Route exact path='/collection' component={Collection} />
-            {/* <Route render={() => <h1 className='display-2'>Wrong page!</h1>} /> */}
+            <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
           </Switch>
         </UserInfoContext.Provider>
       </>

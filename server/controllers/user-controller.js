@@ -17,7 +17,10 @@ module.exports = {
       $or: [{ _id: user ? user._id : params.id }, { username: params.username }],
     })
       .populate('poems')
-      .populate('collections');
+      .populate({
+        path: 'collections',
+        populate: {path: 'poems'}
+      });
 
     if (!foundUser) {
       return res.status(400).json({ message: 'Cannot find a user with this id!' });
@@ -38,15 +41,19 @@ module.exports = {
   // login a user, sign a token, and send it back (to client/src/components/LoginForm.js)
   // {body} is destructured req.body
   async login({ body }, res) {
-    const user = await User.findOne({ $or: [{ username: body.username }, { email: body.email }] })
+    console.log(body);
+    const user = await User.findOne({ username: body.username })
       .populate('poems')
-      .populate('collection');
+      .populate({
+        path: 'collections',
+        populate: {path: 'poems'}
+      });
     if (!user) {
       return res.status(400).json({ message: "Can't find this user" });
     }
-
+    console.log(user);
     const correctPw = await user.isCorrectPassword(body.password);
-
+    console.log(correctPw)
     if (!correctPw) {
       return res.status(400).json({ message: 'Wrong password!' });
     }
