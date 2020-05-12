@@ -1,14 +1,14 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
-
 import LoginForm from './LoginForm';
-import SignupForm from './SignupForm'; 
+import SignupForm from './SignupForm';
 
 import UserInfoContext from '../utils/UserInfoContext';
 import AuthService from '../utils/auth';
 
-function AppNavbar() {
+
+function AppNavbar() { 
   // set modal display state
   const [showModal, setShowModal] = useState(false);
   // get username out of context object to display in nav
@@ -36,8 +36,8 @@ function AppNavbar() {
                   <Nav.Link onClick={AuthService.logout}>Logout</Nav.Link>
                 </>
               ) : (
-                <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
-              )}
+                  <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
+                )}
             </Nav>
           </Navbar.Collapse>
         </Container>

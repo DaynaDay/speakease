@@ -5,7 +5,10 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import * as API from './utils/API';
 import AuthService from './utils/auth';
 import Header from './components/Header/Header';
-import Navbar from './components/Navbar'; 
+import Navbar from './components/Navbar';
+import Welcome from './pages/Welcome';
+import Collection from './pages/Collection';
+import UserInfoContext from '../utils/UserInfoContext';
 
 function App() {
   // set data to be used for UserInfoContext and make it available to all other components
@@ -36,9 +39,9 @@ function App() {
     <Router>
       <>
 
-   <Header />
-     {/* wrap our entire app in context provider and provide userInfo state as value */}
-     <UserInfoContext.Provider value={userInfo}>
+        <Header />
+        {/* wrap our entire app in context provider and provide userInfo state as value */}
+        <UserInfoContext.Provider value={userInfo}>
           <Navbar />
           <Switch>
             <Route exact path='/' component={Welcome} />
@@ -46,12 +49,11 @@ function App() {
             {/* <Route render={() => <h1 className='display-2'>Wrong page!</h1>} /> */}
           </Switch>
         </UserInfoContext.Provider>
-  </>
+      </>
     </Router>
-    
+
   );
 }
 
 export default App;
 
-    

@@ -15,7 +15,7 @@ function PoemForm () {
     <Form.Control type="poem" placeholder="Inhale. Exhale. Write" />
   </Form.Group>
   <Button variant="primary" type="submit">
-    Submit
+    Add To Collection
   </Button>
 </Form>
   )
