@@ -5,12 +5,14 @@ import CollectionForm from '../components/CollectionForm';
 import UserInfoContext from '../utils/UserInfoContext';
 
 
-function Welcome() {
 
+
+function Welcome() {
 
 
   return (
     <>
+    <Container>
       <Tab.Container defaultActiveKey='create'>
 
         <Nav variant='pills'>
@@ -32,6 +34,7 @@ function Welcome() {
           </Tab.Pane>
         </Tab.Content>
       </Tab.Container>
+      </Container>
     </>
   )
 }

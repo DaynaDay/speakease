@@ -6,6 +6,7 @@ import SignupForm from '../SignupForm';
 
 import UserInfoContext from '../../utils/UserInfoContext';
 import AuthService from '../../utils/auth';
+import Style from '../Header/style.css';
 
 
 
@@ -29,10 +30,12 @@ function Header() {
               <Nav.Link as={Link} to='/collection'>
                 See {username}'s Collection
                   </Nav.Link>
+
               <Nav.Link onClick={AuthService.logout}>Logout</Nav.Link>
             </>
           ) : (
               <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
+
             )}
         </Container>
       </Jumbotron >

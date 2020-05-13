@@ -1,10 +1,28 @@
 .jumbotron {
-  height: 500px;
+  height: 300px;
   background-size: cover;
   background-position: center;
   position: relative;
+  font-family: 'Homemade Apple', cursive;
 }
 
- h1 {
-   font-family: 'Homemade Apple', cursive;
- }
+h1 {
+  font-size: 46px;
+  color: rgb(201, 12, 91);
+}
+p {
+  font-size: 34px;
+  color: rgb(206, 42, 110);
+}
+
+.onClick {
+  font-size: 34px;
+  color: rgb(206, 42, 110);
+}
+
+.jumbotron{
+background-image: url("../assets/images/MiddayBloom.jpg");
+  opacity: 0.5;
+}  
+   
+ 
