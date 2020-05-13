@@ -22,9 +22,7 @@ function Header() {
       < Jumbotron fluid>
         <Container>
           <h1>Speak. Easy</h1>
-          <p>
-            Inhale. Exhale. Write.
-    </p>
+
           {username ? (
             <>
               <Nav.Link as={Link} to='/collection'>

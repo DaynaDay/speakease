@@ -24,7 +24,6 @@ function Welcome() {
           </Nav.Item>
         </Nav>
 
-
         <Tab.Content>
           <Tab.Pane eventKey='create'>
            <PoemForm/>
