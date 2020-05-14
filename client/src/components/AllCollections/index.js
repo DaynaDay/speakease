@@ -28,7 +28,7 @@ function AllCollections() {
   // get form data
   const cardData = {
     collectionName,
-    poe
+    poem,
     title
   };
 
