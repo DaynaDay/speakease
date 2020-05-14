@@ -6,6 +6,7 @@ import SignupForm from '../SignupForm';
 
 import UserInfoContext from '../../utils/UserInfoContext';
 import AuthService from '../../utils/auth';
+import Style from '../Header/style.css';
 
 
 
@@ -21,18 +22,18 @@ function Header() {
       < Jumbotron fluid>
         <Container>
           <h1>Speak. Easy</h1>
-          <p>
-            Inhale. Exhale. Write.
-    </p>
+
           {username ? (
             <>
               <Nav.Link as={Link} to='/collection'>
                 See {username}'s Collection
                   </Nav.Link>
+
               <Nav.Link onClick={AuthService.logout}>Logout</Nav.Link>
             </>
           ) : (
               <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
+
             )}
         </Container>
       </Jumbotron >
