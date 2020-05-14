@@ -2,6 +2,7 @@ import React from "react";
 import { Navbar, Nav, Container, Modal, Tab, Jumbotron } from 'react-bootstrap';
 import PoemForm from '../components/PoemForm';
 import CollectionForm from '../components/CollectionForm';
+import AllCollections from '../components/AllCollections';
 import UserInfoContext from '../utils/UserInfoContext';
 
 
@@ -22,6 +23,9 @@ function Welcome() {
           <Nav.Item>
             <Nav.Link eventKey='collection'>Collection</Nav.Link>
           </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey='all-collections'>All Collections</Nav.Link>
+          </Nav.Item>
         </Nav>
 
         <Tab.Content>
@@ -30,6 +34,9 @@ function Welcome() {
           </Tab.Pane>
           <Tab.Pane eventKey='collection'>
             <CollectionForm/>
+          </Tab.Pane>
+          <Tab.Pane eventKey='all-collections'>
+            <AllCollections/>
           </Tab.Pane>
         </Tab.Content>
       </Tab.Container>
